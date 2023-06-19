@@ -18,12 +18,13 @@ class PacientesController < ApplicationController
 
   # GET /pacientes/1/edit
   def edit
+    @paciente = Paciente.find(params[:id])
   end
 
   # POST /pacientes or /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
-    @paciente.endereco = Endereco.new(paciente_params[:endereco_atributes])
+    @paciente.endereco = Endereco.new(paciente_params[:endereco_attributes])
 
     respond_to do |format|
       if @paciente.save
@@ -38,6 +39,7 @@ class PacientesController < ApplicationController
 
   # PATCH/PUT /pacientes/1 or /pacientes/1.json
   def update
+    @paciente = Paciente.find(params[:id])
     respond_to do |format|
       if @paciente.update(paciente_params)
         format.html { redirect_to paciente_url(@paciente), notice: "Paciente was successfully updated." }
@@ -69,6 +71,6 @@ class PacientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def paciente_params
-      params.require(:paciente).permit(:nomeCompleto, :dataDeNascimento, :cpf, :email, {:endereco_atributes => [:cep, :logradouro, :cidade, :bairro, :complemento]})
+      params.require(:paciente).permit(:nomeCompleto, :dataDeNascimento, :cpf, :email, {:endereco_attributes => [:cep, :logradouro, :cidade, :bairro, :complemento]})
     end
 end
