@@ -1,5 +1,5 @@
 class Endereco < ApplicationRecord
-  belongs_to :Paciente
+  belongs_to :paciente
 
   validates :cep, presence: true, length: {is: 8}
   validates :cidade, presence: true, length: {minimum: 3, too_short: "%{count} Minimo de caracteres",
