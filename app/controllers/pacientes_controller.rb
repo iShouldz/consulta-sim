@@ -23,7 +23,7 @@ class PacientesController < ApplicationController
   # POST /pacientes or /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
-    @paciente.endereco = Endereco.new(paciente_params[:endereco_atributos])
+    @paciente.endereco = Endereco.new(paciente_params[:endereco_atributes])
 
     respond_to do |format|
       if @paciente.save
@@ -69,6 +69,6 @@ class PacientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def paciente_params
-      params.require(:paciente).permit(:nomeCompleto, :dataDeNascimento, :cpf, :email, {:endereco_atributos => [:cep, :logradouro, :cidade, :bairro, :complemento]})
+      params.require(:paciente).permit(:nomeCompleto, :dataDeNascimento, :cpf, :email, {:endereco_atributes => [:cep, :logradouro, :cidade, :bairro, :complemento]})
     end
 end
