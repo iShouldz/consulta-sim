@@ -8,7 +8,7 @@ class Paciente < ApplicationRecord
             length: {is: 11, message: 'CPF PRECISA DE 11 DIGITOS'},
             format: {with: /\A\d+\z/, message: 'APENAS NÚMEROS!'}
   validates :email, format:{with: URI:: MailTo::EMAIL_REGEXP}
-  validates :nome, presence: {message: 'POR FAVOR, DIGITE SEU NOME'},
+  validates :nomeCompleto, presence: {message: 'POR FAVOR, DIGITE SEU NOME'},
             length: {maximum: 100, message: 'TAMANHO MAXIMO: 100 CARACTERES'}
 
 end
