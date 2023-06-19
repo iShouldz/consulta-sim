@@ -1,6 +1,6 @@
 class Consultum < ApplicationRecord
-  belongs_to :medico
-  belongs_to :paciente
+  belongs_to :Medico
+  belongs_to :Paciente
   validates :data, :horario, presence: true
   validate :validar_data
   validates_associated :Medico
