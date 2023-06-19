@@ -16,7 +16,13 @@
 
   <p>
     <strong>Paciente:</strong>
-    <%= consultum.Paciente_id %>
+    <%= consultum.Paciente.nomeCompleto%>
+  </p>
+
+  <p>
+    <strong>Medico:</strong>
+    <%= consultum.Medico_id %>
+    <%= consultum.Medico.nomeCompleto %>
   </p>
 
 </div>
