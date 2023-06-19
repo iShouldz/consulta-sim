@@ -18,7 +18,7 @@
       <tr>
         <td><%= consultum.data %></td>
         <td><%= consultum.horario %></td>
-        <td><%= consultum.paciente.nomeCompleto %></td>
+        <td><%= consultum.Paciente.nomeCompleto %></td>
       </tr>
     <% end %>
     </tbody>
@@ -27,7 +27,8 @@
 
 <div>
   <%= link_to "Edit this medico", edit_medico_path(@medico) %> |
-  <%= link_to "Back to medicos", medicos_path %>
+  <%= link_to "Back to medicos", medicos_path %> |
+  <%= link_to "Pagina inicial", root_path %>
 
   <%= button_to "Destroy this medico", @medico, method: :delete %>
 </div>
