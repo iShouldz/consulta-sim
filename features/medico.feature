@@ -12,4 +12,4 @@ Feature:
   Scenario: remover um medico inexistente
     Given Eu estou na pagina inicial
     When Eu clico em listar medicos do sistema
-    Then Eu nao encontro o medico com crm '333000' e permaneco na pagina de listagem de medicos
+    Then Eu nao encontro o medico com crm '333000'

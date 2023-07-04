@@ -37,7 +37,7 @@ When('Eu clico em listar medicos do sistema') do
   expect(page).to have_current_path('/medicos')
 end
 
-Then('Eu nao encontro o medico com crm {string} e permaneco na pagina de listagem de medicos') do |crm|
+Then('Eu nao encontro o medico com crm {string}') do |crm|
   expect(page).to have_no_content(crm)
   expect(page).to have_current_path('/medicos')
 end
