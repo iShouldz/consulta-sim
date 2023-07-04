@@ -26,8 +26,10 @@ end
 When('O paciente de cpf {string} e deletado') do |cpf|
   click_button 'Destroy this paciente'
   expect(page).to have_no_content(cpf)
+  expect(page).to have_current_path('/pacientes')
 end
 
 Then('Eu nao encontro a cidade do paciente de cpf {string}') do |cpf|
   expect(page).to have_no_content(cpf)
+  expect(page).to have_current_path('/pacientes')
 end
